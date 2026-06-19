@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  portal:
+    build: ./portal
+    ports:
+      - "8080:8080"
+    networks:
+      - ctf_net
+    restart: unless-stopped
+
+  internal_tool:
+    build: ./internal_tool
+    # No ports exposed to the host directly. Must be accessed via SSRF or internal docker network if they get RCE.
+    # Actually, for CTF purposes, they only have the web interface. We need to expose it on a non-standard port so they can access it directly IF they know the port, or we can make it so they can reach it via SSRF.
+    # Let's map it to the host but on a weird port, so they have to read the config.yaml to find it.
+    ports:
+      - "13337:5000"
+    networks:
+      - ctf_net
+    restart: unless-stopped
+
+networks:
+  ctf_net:
+    driver: bridge

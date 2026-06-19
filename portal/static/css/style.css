@@ -1,0 +1,572 @@
+/* U.S. Government Website Theme (USWDS Inspired - Polished) */
+
+:root {
+    --primary-blue: #112e51;
+    --primary-blue-light: #205493;
+    --primary-blue-dark: #0b1f38;
+    --secondary-red: #e31c3d;
+    --light-bg: #f4f6f9;
+    --white: #ffffff;
+    --text-dark: #1b1b1b;
+    --text-light: #5b616b;
+    --border-color: #d6d7d9;
+    --font-family: "Public Sans", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --yellow-warning: #fdb81e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1440px;
+    width: 96%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-blue-light);
+    text-decoration: underline;
+}
+a:hover {
+    color: var(--primary-blue);
+}
+
+/* Gov Banner */
+.gov-banner {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+    padding: 8px 0;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.banner-content p {
+    margin-right: 15px;
+}
+
+.banner-link {
+    color: #aeb0b5;
+    text-decoration: underline;
+    margin-left: auto;
+}
+
+.banner-link span {
+    font-size: 10px;
+}
+
+/* USA Flag Placeholder */
+.flag-placeholder {
+    width: 24px;
+    height: 16px;
+    display: flex;
+    position: relative;
+    border: 1px solid #555;
+}
+.flag-blue {
+    width: 10px;
+    height: 9px;
+    background-color: #0a3161;
+}
+.flag-stripes {
+    flex: 1;
+    background: repeating-linear-gradient(
+        to bottom,
+        #b31942,
+        #b31942 2px,
+        #ffffff 2px,
+        #ffffff 4px
+    );
+    height: 16px;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+.flag-blue { z-index: 1; position: absolute; }
+
+/* Main Header */
+.main-header {
+    background-color: var(--white);
+    padding: 15px 0;
+    border-bottom: 5px solid var(--primary-blue);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Seal Placeholder */
+.seal-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    border: 3px solid #d4af37;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.seal-inner {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px dashed #d4af37;
+}
+
+.site-title h1 {
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin-bottom: 0px;
+    font-weight: 700;
+}
+
+.site-title p {
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.header-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.header-links span {
+    margin: 0 10px;
+    color: var(--border-color);
+}
+
+/* Navigation */
+.main-nav {
+    background-color: var(--primary-blue);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    display: block;
+    color: var(--white);
+    padding: 16px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-right: 1px solid #1f4370;
+}
+
+.main-nav ul li a:hover, .main-nav ul li a.active {
+    background-color: var(--primary-blue-light);
+    text-decoration: underline;
+}
+
+/* Alert Banner */
+.alert-banner {
+    background-color: #fae4e8;
+    border-top: 4px solid var(--secondary-red);
+    border-bottom: 1px solid #eba4a4;
+    padding: 18px 0;
+}
+
+.alert-banner .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.alert-icon {
+    font-size: 22px;
+    color: var(--secondary-red);
+    margin-top: -2px;
+}
+
+.alert-text {
+    font-size: 15px;
+    color: #5c1111;
+}
+
+/* Layout Grids */
+.content-area {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.grid-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.col-7 {
+    flex: 7;
+    min-width: 320px;
+}
+
+.col-3 {
+    flex: 3;
+    min-width: 300px;
+}
+
+.col-5 {
+    flex: 5;
+    min-width: 320px;
+}
+
+/* Typography & Components */
+.hero-section {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.hero-section h2 {
+    font-size: 36px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    height: 100%;
+}
+
+.card-header {
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.bg-primary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue-dark);
+}
+
+.bg-primary .card-header {
+    background-color: var(--primary-blue-dark);
+    border-bottom: 1px solid var(--primary-blue-dark);
+    color: var(--white);
+}
+
+/* Login Form */
+.login-card {
+    border-top: 4px solid var(--secondary-red);
+}
+
+.warning-banner {
+    background-color: #fef0d9;
+    color: #8a6d3b;
+    padding: 15px 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    background-color: #e4e2e0;
+}
+
+.btn-login {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: not-allowed;
+    border-radius: 4px;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.maintenance-note {
+    font-size: 12px;
+    color: var(--secondary-red);
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Lists and Tables */
+.notice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notice-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+.notice-list li:last-child {
+    border-bottom: none;
+}
+
+.new-tag {
+    background-color: var(--secondary-red);
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f1f1f1;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.pdf-link {
+    display: inline-block;
+    padding: 12px 15px;
+    background-color: #f1f1f1;
+    border-left: 4px solid var(--secondary-red);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 15px 0;
+    width: 100%;
+}
+.pdf-link:hover {
+    background-color: #e4e2e0;
+}
+.pdf-meta {
+    font-size: 12px;
+    color: var(--text-light);
+    display: block;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+/* Threat Dashboard */
+.threat-stat {
+    text-align: center;
+    border-top: 1px solid #1f4370;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.stat-box {
+    flex: 1;
+}
+.stat-num {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--yellow-warning);
+    display: block;
+}
+.stat-label {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Subpage Specifics */
+.breadcrumb {
+    background: #e4e2e0;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+.sidebar {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-top: 4px solid var(--primary-blue);
+}
+.sidebar h4 {
+    font-size: 18px;
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+.sidebar ul li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+}
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    color: var(--primary-blue-light);
+    font-weight: bold;
+    padding-left: 5px;
+    transition: padding-left 0.2s;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-blue-dark);
+    color: #e4e2e0;
+    padding: 50px 0;
+    font-size: 14px;
+    border-top: 5px solid var(--primary-blue);
+}
+
+.footer-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #2a4b75;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col-main {
+    flex: 2;
+    min-width: 300px;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #aeb0b5;
+    text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.small-seal {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+.small-seal .seal-inner {
+    width: 35px;
+    height: 35px;
+}
+
+.footer-legal {
+    font-size: 12px;
+    color: #aeb0b5;
+    line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .header-content, .footer-row, .grid-row, .banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .site-title h1 {
+        font-size: 22px;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .main-nav ul li a {
+        border-right: none;
+        border-bottom: 1px solid #1f4370;
+    }
+    
+    .col-7, .col-3, .col-5, .footer-col, .footer-col-main {
+        width: 100%;
+        flex: none;
+    }
+}
